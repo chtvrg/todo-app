@@ -56,7 +56,7 @@ tasks.build {
 
 publishing {
     publications {
-        mavenJava(MavenPublications) {
+        mavenJava(MavenPublication) {
             groupId = 'org.example'
             artifactId = 'todo-app'
             version = project.version

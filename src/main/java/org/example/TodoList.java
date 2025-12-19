@@ -5,6 +5,7 @@ import java.util.List;
 
 public class TodoList {
     private final List<String> items = new ArrayList<>();
+
     public void add(String item) {
         if (item != null) {
             item = item.trim();
@@ -21,9 +22,32 @@ public class TodoList {
         }
         return false;
     }
+
+    public void clear() {
+        items.clear();
+    }
+
+    public boolean markDone(int index) {
+        if (index >= 0 && index < items.size()) {
+            return true;
+        }
+        return false;
+    }
+
+    public List<String> search(String query) {
+        List<String> results = new ArrayList<>();
+        for (String item : items) {
+            if (item.toLowerCase().contains(query.toLowerCase())) {
+                results.add(item);
+            }
+        }
+        return results;
+    }
+
     public List<String> getAll() {
         return new ArrayList<>(items);
     }
+
     public int size() {
         return items.size();
     }
